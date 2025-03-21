@@ -38,6 +38,7 @@
 		<module>SpotifyListService</module>
 		<module>SpotifyMusicService</module>
 		<module>SpotifyUserService</module>
+		<module>config-server</module>
 	</modules>
 	<dependencies>
 		<dependency>
