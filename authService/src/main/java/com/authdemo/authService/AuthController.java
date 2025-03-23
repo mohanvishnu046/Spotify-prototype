@@ -39,6 +39,7 @@ public class AuthController {
             Map<String,String> map=new HashMap<>();
             map.put("token", token);
             map.put("message", "User Successfully logged In");
+            map.put("userId", kafkaUser.getUserId());
             return ResponseEntity.ok(map);
         }else return new ResponseEntity<>("Invalid User", HttpStatus.UNAUTHORIZED);
     }
