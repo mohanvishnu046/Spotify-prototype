@@ -19,15 +19,13 @@ spring:
           uri: http://localhost:8020
           predicates:
             - Path=/api/v1/music/**
-          filters:
-            - JwtAuthenticationFilterFactory
 
         - id: SpotifyListService
           uri: http://localhost:8030
           predicates:
             - Path=/api/v1/list/**
           filters:
-            - JwtAuthenticationFilterFactory
+            - AuthenticationFilter
 
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin

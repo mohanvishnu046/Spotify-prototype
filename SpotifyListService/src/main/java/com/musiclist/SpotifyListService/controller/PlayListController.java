@@ -4,6 +4,8 @@ import com.musiclist.SpotifyListService.model.PlaylistResponse;
 import com.musiclist.SpotifyListService.model.Track;
 import com.musiclist.SpotifyListService.service.PlayListService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,7 +32,10 @@ public class PlayListController {
     }
 
     @GetMapping("/playlists")
-    public List<PlaylistResponse> getPlaylists(@RequestParam String userId) {
-        return playlistService.getPlaylists(userId);
+    public ResponseEntity<?> getPlaylists(@RequestParam String userId) {
+        List<PlaylistResponse> existingList = playlistService.getPlaylists(userId);
+        if(existingList.isEmpty())
+            return new ResponseEntity<>("Playlists are not found for userId : "+userId, HttpStatus.NOT_FOUND);
+        return ResponseEntity.ok(existingList);
     }
 }

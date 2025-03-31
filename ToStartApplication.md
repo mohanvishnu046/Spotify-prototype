@@ -10,6 +10,7 @@ MusicService on port 8020
 ListService on port 8030
 authService on port 8040
 spotify-gateway on port 8050
+config-server on port 8060
 eureka-server on port 8761
 
 To search music

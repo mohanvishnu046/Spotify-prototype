@@ -29,6 +29,9 @@ public class FavoriteController {
 
     @GetMapping("/favorites/{userId}")
     public  ResponseEntity<?> getFavorites(@PathVariable String userId) {
-        return ResponseEntity.ok(favoriteService.getFavorites(userId));
+        List<Track> favList = favoriteService.getFavorites(userId);
+        if(favList.isEmpty())
+            return new ResponseEntity<>("Favorite songs List for the userID are empty",HttpStatus.NOT_FOUND);
+        return ResponseEntity.ok(favList);
     }
 }
