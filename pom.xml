@@ -32,13 +32,13 @@
 		<spring-cloud.version>2024.0.0</spring-cloud.version>
 	</properties>
 	<modules>
-		<module>authService</module>
-		<module>eureka-server</module>
-		<module>spotify-gateway</module>
-		<module>SpotifyListService</module>
-		<module>SpotifyMusicService</module>
-		<module>SpotifyUserService</module>
 		<module>config-server</module>
+		<module>eureka-server</module>
+		<module>SpotifyUserService</module>
+		<module>authService</module>
+		<module>SpotifyMusicService</module>
+		<module>SpotifyListService</module>
+		<module>spotify-gateway</module>
 	</modules>
 	<dependencies>
 		<dependency>
@@ -63,11 +63,89 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+<!--	<build>-->
+<!--		<plugins>-->
+<!--			<plugin>-->
+<!--				<groupId>org.springframework.boot</groupId>-->
+<!--				<artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--			</plugin>-->
+<!--		</plugins>-->
+<!--	</build>-->
 	<build>
 		<plugins>
+			<!-- This plugin runs services one by one after they are built -->
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.8</version>
+<!--				<executions>-->
+<!--					<execution>-->
+<!--						<phase>install</phase> &lt;!&ndash; This runs after build &ndash;&gt;-->
+<!--						<goals>-->
+<!--							<goal>run</goal>-->
+<!--						</goals>-->
+<!--						<configuration>-->
+<!--							<tasks>-->
+<!--								&lt;!&ndash; Run config-server &ndash;&gt;-->
+<!--								<echo message="Running config-server..."/>-->
+<!--								<exec executable="D:/Softwares/mvn/apache-maven-3.9.9/bin/mvn.bat">-->
+<!--									<arg value="spring-boot:run"/>-->
+<!--									<arg value="-pl"/>-->
+<!--									<arg value="config-server"/>-->
+<!--								</exec>-->
+
+<!--								&lt;!&ndash; Run eureka-server &ndash;&gt;-->
+<!--								<echo message="Running eureka-server..."/>-->
+<!--								<exec executable="D:/Softwares/mvn/apache-maven-3.9.9/bin/mvn.bat">-->
+<!--									<arg value="spring-boot:run"/>-->
+<!--									<arg value="-pl"/>-->
+<!--									<arg value="eureka-server"/>-->
+<!--								</exec>-->
+
+<!--								&lt;!&ndash; Run SpotifyUserService &ndash;&gt;-->
+<!--								<echo message="Running SpotifyUserService..."/>-->
+<!--								<exec executable="D:/Softwares/mvn/apache-maven-3.9.9/bin/mvn.bat">-->
+<!--									<arg value="spring-boot:run"/>-->
+<!--									<arg value="-pl"/>-->
+<!--									<arg value="SpotifyUserService"/>-->
+<!--								</exec>-->
+
+<!--								&lt;!&ndash; Run authService &ndash;&gt;-->
+<!--								<echo message="Running authService..."/>-->
+<!--								<exec executable="D:/Softwares/mvn/apache-maven-3.9.9/bin/mvn.bat">-->
+<!--									<arg value="spring-boot:run"/>-->
+<!--									<arg value="-pl"/>-->
+<!--									<arg value="authService"/>-->
+<!--								</exec>-->
+
+<!--								&lt;!&ndash; Run SpotifyMusicService &ndash;&gt;-->
+<!--								<echo message="Running SpotifyMusicService..."/>-->
+<!--								<exec executable="D:/Softwares/mvn/apache-maven-3.9.9/bin/mvn.bat">-->
+<!--									<arg value="spring-boot:run"/>-->
+<!--									<arg value="-pl"/>-->
+<!--									<arg value="SpotifyMusicService"/>-->
+<!--								</exec>-->
+
+<!--								&lt;!&ndash; Run SpotifyListService &ndash;&gt;-->
+<!--								<echo message="Running SpotifyListService..."/>-->
+<!--								<exec executable="D:/Softwares/mvn/apache-maven-3.9.9/bin/mvn.bat">-->
+<!--									<arg value="spring-boot:run"/>-->
+<!--									<arg value="-pl"/>-->
+<!--									<arg value="SpotifyListService"/>-->
+<!--								</exec>-->
+
+<!--								&lt;!&ndash; Run spotify-gateway &ndash;&gt;-->
+<!--								<echo message="Running spotify-gateway..."/>-->
+<!--								<exec executable="D:/Softwares/mvn/apache-maven-3.9.9/bin/mvn.bat">-->
+<!--									<arg value="spring-boot:run"/>-->
+<!--									<arg value="-pl"/>-->
+<!--									<arg value="spotify-gateway"/>-->
+<!--								</exec>-->
+<!--							</tasks>-->
+
+<!--						</configuration>-->
+<!--					</execution>-->
+<!--				</executions>-->
 			</plugin>
 		</plugins>
 	</build>

@@ -37,6 +37,10 @@ spring:
             allowedHeaders: "*"
 server:
   port: 8050
+#  error:
+#    include-message: always
+#    include-binding-errors: always
+#    include-stacktrace: never
 eureka:
   client:
     register-with-eureka: true
