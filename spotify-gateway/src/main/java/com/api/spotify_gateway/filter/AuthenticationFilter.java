@@ -30,7 +30,6 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
             if (authHeader == null || !authHeader.startsWith("Bearer ")) {
                 return handleError(exchange, "Missing or invalid Authorization header", HttpStatus.UNAUTHORIZED);
             }
-
             String token = authHeader.substring(7);
 
             try {
