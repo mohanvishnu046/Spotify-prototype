@@ -1,0 +1,197 @@
+/* Navbar.css */
+
+/* Base Navbar Styles */
+.nav {
+  background-color: #000;
+  padding: 10px 20px;
+  display: flex;
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  height: 70px;
+  margin: 0 auto;
+}
+
+/* Logo Styles */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1db954;
+  text-decoration: none;
+  width: 90px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Menu Toggle Button (Mobile) */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  color: #b3b3b3;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 16px;
+  font-weight: bold;
+  color: #b3b3b3;
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+.nav-link:hover, 
+.nav-link.active {
+  color: #fff;
+  background: #1db954;
+}
+
+.nav-link svg {
+  font-size: 18px;
+}
+
+/* Logout Button (matches nav-link style) */
+button.nav-link {
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: bold;
+  color: #b3b3b3;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 5px;
+}
+
+button.nav-link:hover {
+  color: #fff;
+  background: #1db954;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    gap: 5px;
+    padding: 15px 0;
+    clip-path: circle(0px at 90% -10%);
+    -webkit-clip-path: circle(0px at 90% -10%);
+    transition: all 0.5s ease-out;
+    pointer-events: none;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-links.open {
+    clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+    pointer-events: all;
+  }
+
+  .nav-link, button.nav-link {
+    width: 90%;
+    padding: 12px;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .nav-link:hover, 
+  .nav-link.active,
+  button.nav-link:hover {
+    background: #1db954;
+    color: #fff;
+  }
+}
+
+/* Animation for menu items */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-links.open .nav-link,
+.nav-links.open button.nav-link {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.nav-links.open .nav-link:nth-child(1),
+.nav-links.open button.nav-link:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.nav-links.open .nav-link:nth-child(2),
+.nav-links.open button.nav-link:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.nav-links.open .nav-link:nth-child(3),
+.nav-links.open button.nav-link:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.nav-links.open .nav-link:nth-child(4),
+.nav-links.open button.nav-link:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.nav-links.open .nav-link:nth-child(5),
+.nav-links.open button.nav-link:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.nav-links.open .nav-link:nth-child(6),
+.nav-links.open button.nav-link:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.nav-links.open .nav-link:nth-child(7),
+.nav-links.open button.nav-link:nth-child(7) {
+  animation-delay: 0.7s;
+}

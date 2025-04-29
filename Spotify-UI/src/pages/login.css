@@ -1,0 +1,81 @@
+/* Style for the overall container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+  }
+  
+  /* Style for the login card */
+  .login-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  /* Style for the header */
+  .login-header {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Style for the form group */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Style for input fields */
+  .form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    transition: border-color 0.3s;
+  }
+  
+  /* Style for focus state of input fields */
+  .form-control:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Style for the login button */
+  .login-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .login-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Alert styles */
+  .alert-danger {
+    color: #fff;
+    background-color: #f44336;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+  }
+  
+  /* Placeholder text style */
+  input::placeholder {
+    color: #aaa;
+  }
+  
