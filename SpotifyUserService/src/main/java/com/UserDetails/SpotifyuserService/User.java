@@ -1,13 +1,21 @@
 package com.UserDetails.SpotifyuserService;
 
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.validation.annotation.Validated;
 
+@Validated
 @Document(collection = "Users")
 public class User {
+    @Email(message = "enter valid email")
     @Id
     private String email;
+    @NotBlank
+    @Pattern(regexp = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$", message = "Password is not strong")
     private String password;
     private String userId;
 

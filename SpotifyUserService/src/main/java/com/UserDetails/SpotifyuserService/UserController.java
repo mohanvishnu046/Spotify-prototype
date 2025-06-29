@@ -1,5 +1,6 @@
 package com.UserDetails.SpotifyuserService;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +14,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<?> saveUser(@RequestBody User user){
+    public ResponseEntity<?> saveUser(@Valid @RequestBody User user){
         try{
             return new ResponseEntity<>(userService.setUserDetails(user), HttpStatus.CREATED);
         }catch (Exception e){
